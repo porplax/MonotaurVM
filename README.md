@@ -1,38 +1,21 @@
-# *Instructions*
+# Monotaur
+### `Introduction`
+**Monotaur** implements simple math operations, storage operations, stack operations, system calls, import operations. The VM even has ways to idenitfy proper `.cw` files, which is it's input files. It's a simple project I made to better understand how programming languages work, how CPUs work, and how VMs work. The stack in Monotaur is called the plate. The plate has a size of `128`. 
+
+### `Instructions`
+#### HALT
+--------------------- 
+Inherits the `0x00` value. Halts the current program it is executing. Here's its context.
 ```
-HALT [0x00] | Stops the Monotaur program completely. 
-
-PLOP [0x01] | Adds an integer to plate.
-PLUMMET [0x02] | Adds a float to plate.
-SCALE [0x03] | Adds a string to plate.
-
-TAKE [0x04] | Take one from plate.
-DEVOUR [0x05] | Clear entire plate.
-
-INC [0x06] | Increments one to integer, float.
-DNC [0x07] | Decrements one to integer, float.
-
-ISTORE [0x08] | Stores integer to fridge. 
-ILOAD [0x09] | Loads a value from fridge onto plate.
-FSTORE [0x0A] | Stores float to fridge.
-FLOAD [0x0B] | Loads a value from fridge onto plate.
-
-IMPORT [0x16] | Imports a chow file. 
+BE EF BA BE 01 00
 ```
+The program above just validates the program and exits. 
 
-ILOAD and FLOAD is marked for removal in the future. 
-
-# *Context*
-In order to work with integers, you use the `INC` instruction in order to achieve desired value.
-So if you wanted to get 5 and add it to plate, you have to do this:
+---------------------
+#### PLOP
+---------------------
+Inherits the `0x01` value. Adds a **Integer** to plate. You would use it as such:
 ```
-BE EF BA BE 01 06 06 06 06 06 01 00
-```
-For every `06` is a `INC` function. 
-
-# *What makes a .chow file*
-Every chow file needs to start with `0xBEEFBABE` and the following chow version number. 
-```
-BE EF BA BE 01 00 
-```
-Chow files also need to end with `00`. Which will halt the program.
+BE EF BA BE 01 06 01 00
+``` 
+This example adds *1* to plate. 
