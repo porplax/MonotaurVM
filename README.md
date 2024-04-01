@@ -1,4 +1,7 @@
 # Monotaur
+## Abandonment 
+Monotaur is a stack-based virtual machine that simulates a CPU. This project is now abandoned. Feel free to study the code here! Monotaur should be able to function fully. 
+
 ### `Introduction`
 **Monotaur** implements simple math operations, storage operations, stack operations, system calls, import operations. The VM even has ways to idenitfy proper `.cw` files, which is it's input files. It's a simple project I made to better understand how programming languages work, how CPUs work, and how VMs work. The stack in Monotaur is called the plate. The plate has a size of `128`. 
 
